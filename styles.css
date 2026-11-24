@@ -1922,6 +1922,19 @@ body {
   .theatre-bottom-bar {
     padding: 14px 16px;
   }
+@media (max-width: 768px) {
+  body {
+    font-size: 16px; /* Scales down default text */
+  }
+  h1 {
+    font-size: 24px; /* Shrinks large desktop headings */
+  }
+  .your-widget {
+    width: 100%; /* Forces wide widgets to fit inside the phone screen */
+    padding: 10px;
+  }
+}
+
   .bespoke-card {
     padding: 36px 20px;
   }
