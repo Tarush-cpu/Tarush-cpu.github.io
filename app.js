@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const scrubberFill = document.getElementById('scrubberFill');
   const progressPercent = document.getElementById('progressPercent');
   const scrollProgressLabel = document.getElementById('scrollProgressLabel');
+  const mobilePhaseTitle = document.getElementById('mobilePhaseTitle');
   const phaseSteps = document.querySelectorAll('.phase-step');
 
   const boxAssembly = document.getElementById('boxAssembly');
@@ -130,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const capGrad = isSapphire ? 'url(#sapphireCapGrad)' : 'url(#sovereignCapGrad)';
 
     el.innerHTML = `
-      <svg viewBox="0 0 460 90" width="380" height="75" style="filter: drop-shadow(0 15px 25px rgba(0,0,0,0.85));">
+      <svg viewBox="0 0 460 90" width="100%" height="auto" style="max-width: 360px; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.85));">
         <defs>
           <linearGradient id="sovereignBarrelGrad" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#14223b"/>
@@ -231,6 +232,18 @@ document.addEventListener('DOMContentLoaded', () => {
         step.classList.remove('active');
       }
     });
+
+    const phaseNames = [
+      '01 • Lacquered Vault Box',
+      '02 • Lid Unveiling & Velvet',
+      '03 • 3D Pen Levitation',
+      '04 • Deconstructed Anatomy',
+      '05 • Calligraphy Ready'
+    ];
+
+    if (mobilePhaseTitle) {
+      mobilePhaseTitle.textContent = phaseNames[activePhaseIndex];
+    }
 
     if (scrollProgressLabel) {
       if (p < 0.15) scrollProgressLabel.textContent = 'SCROLL DOWN TO UNBOX';
